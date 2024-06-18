@@ -2,7 +2,6 @@ pipeline{
     agent{
         label 'node-20'
     }
-    }
     stages{
         stage("Checkout"){
             steps{
