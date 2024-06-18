@@ -2,10 +2,12 @@ pipeline{
     agent{
         label 'node-20'
     }
+    }
     stages{
         stage("Checkout"){
             steps{
-              echo "Fetch the code from github......"
+              echo "Download the code from github......"
+              git branch: 'main', url: 'https://github.com/ullagallu123/jenkins-practice.git'
             }
         }
         stage("Build"){
@@ -17,7 +19,7 @@ pipeline{
     post{
         always{
             echo "cleaning up..."
-            deleteDir()
+            deleteDir() //delete current build dir once build was completed
         }
     }
 }
