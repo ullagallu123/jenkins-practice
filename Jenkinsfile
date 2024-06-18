@@ -14,6 +14,11 @@ pipeline{
                 echo "Build the code....."
             }
         }
+        stage("Deploying"){
+            steps{
+                echo "Deploy the code"
+            }
+        }
     }
     post{
         always{
